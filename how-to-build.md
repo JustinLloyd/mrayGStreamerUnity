@@ -2,7 +2,9 @@
 
 Install Windows 10 Pro x64 1909 in VM
 
-After installing chocolatey (chocolatey.org):
+Install Chocolatey (chocolatey.org)
+
+After installing chocolatey:
 
 ## Install utilities from chocolatey ##
     (WIN+R) cmd (CTRL+SHIFT+ENTER)

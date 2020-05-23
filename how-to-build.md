@@ -1,6 +1,7 @@
 # How To Build This Project #
 
 Install Windows 10 Pro x64 1909 in VM
+
 After installing chocolatey (chocolatey.org):
 
 ## Install utilities from chocolatey ##

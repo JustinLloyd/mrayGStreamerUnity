@@ -14,7 +14,7 @@ After installing chocolatey:
     $ choco install unzip (ENTER)
     $ exit (ENTER)
 
-## install gstreamer & dependencies walker ##
+## Install gstreamer & dependencies walker ##
     (WIN+R) cmd (CTRL+SHIFT+ENTER)
     $ cd \Users\Justin\Documents (ENTER)
     $ wget https://gstreamer.freedesktop.org/data/pkg/windows/1.16.2/gstreamer-1.0-devel-mingw-x86_64-1.16.2.msi (ENTER)

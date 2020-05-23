@@ -40,5 +40,5 @@ After installing chocolatey (chocolatey.org):
     $ set PATH=%PATH%;c:\gstreamer\1.0\x86_64\bin (ENTER)
     $ rem confirm we have a mingw build of the mray gstreamer unity library
     $ C:\Users\justin\Documents\mrayGStreamerUnity\Plugin\VS>\users\justin\Downloads\dependencies\Dependencies.exe -modules Release64\GStreamerUnityPlugin.dll | find "gstapp" (ENTER)
-[Environment] libgstapp-1.0-0.dll : c:\gstreamer\1.0\x86_64\bin\libgstapp-1.0-0.dll
-`
+    [Environment] libgstapp-1.0-0.dll : c:\gstreamer\1.0\x86_64\bin\libgstapp-1.0-0.dll
+

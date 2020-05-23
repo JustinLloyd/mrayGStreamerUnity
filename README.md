@@ -1,6 +1,14 @@
 # mrayGStreamerUnity
 GStreamer Integration with Unity using a Native plugin 
 
+Updated 29/April/2020:
+
+The current plugin uses GStreamer 1.16.2:
+
+https://gstreamer.freedesktop.org/data/pkg/windows/1.16.2/
+
+If you had run time issues of missing libraries, make sure to install 1.16.2, and add the bin folder to the PATH environment.
+
 Updated 11/April/2017:
 
 Currently designed to run under Unity 64bit version - Windows
@@ -23,6 +31,7 @@ https://www.microsoft.com/en-us/download/details.aspx?id=40784
 
 Computer -> System properties -> Advanced System Settings -> Advanced Tab -> Environment Variables... -> System Variables -> Variable: Path -> Edit -> New -> C:\gstreamer\1.0\x86_64\bin
 
+New Variable: GST_SDK_PATH= C:\gstreamer\1.0\x86_64\
 
 GStreamer path should be similar to this (depending on installation directory):
 C:\gstreamer\1.0\x86_64\bin

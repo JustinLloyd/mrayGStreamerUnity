@@ -30,7 +30,6 @@ After installing chocolatey:
 3. Optional - install dependency checker software  
 <code>$ wget https://github.com/lucasg/Dependencies/releases/download/v1.10/Dependencies_x64_Release.zip</code><kbd>ENTER</kbd>  
 <code>$ unzip Dependencies_x64_Release.zip -d dependencies</code><kbd>ENTER</kbd>  
-
 4. Confirm we have gstreamer and it is the mingw build  
 <code>$ rem confirm we have gstreamer and it is the mingw build</code><kbd>ENTER</kbd>  
 <code>$ dir c:\gstreamer\1.0\x86_64\libgstapp-1.0-0.dll /s/b</code><kbd>ENTER</kbd>  
@@ -48,7 +47,6 @@ After installing chocolatey:
 ## Build the project ##
 1. Open a Visual Studio Command Prompt  
 <kbd>WIN</kbd>+<kbd>R</kbd><code>%comspec% /k "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\Tools\VsDevCmd.bat"</code><kbd>ENTER</kbd>  
-
 2. Verify the gstreamer environment variables are correctly set  
 <code>$ echo %GST_SDK_PATH%</code><kbd>ENTER</kbd>  
 <code>$ rem we should see the following text in the command prompt</code><kbd>ENTER</kbd>  
@@ -59,7 +57,6 @@ After installing chocolatey:
 <code>$ cd \Users\justin\Documents\mrayGStreamerUnity\Plugin\VS</code><kbd>ENTER</kbd>  
 4. Build the project  
 <code>$ devenv GStreamerUnityPlugin.sln /build Release</code><kbd>ENTER</kbd>  
-        
 5. Optional - confirm we have a mingw build of the mrayGstreamerUnity project by using Dependencies application  
 <code>$ set PATH=%PATH%;c:\gstreamer\1.0\x86_64\bin</code><kbd>ENTER</kbd>  
 <code>$ %USERPROFILE%\Downloads\dependencies\Dependencies.exe -modules Release64\GStreamerUnityPlugin.dll | find "gstapp"</code><kbd>ENTER</kbd>  

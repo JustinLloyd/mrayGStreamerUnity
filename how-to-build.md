@@ -22,14 +22,14 @@ After installing chocolatey:
 1. Open an admin prompt  
 <kbd>WIN</kbd>+<kbd>R</kbd><code>cmd</code><kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>ENTER</kbd>
 2. Install gstreamer  
-<code>$ cd %USERPROFILE%\Downloads (ENTER)
-<code>$ wget https://gstreamer.freedesktop.org/data/pkg/windows/1.16.2/gstreamer-1.0-devel-mingw-x86_64-1.16.2.msi (ENTER)
-<code>$ wget https://gstreamer.freedesktop.org/data/pkg/windows/1.16.2/gstreamer-1.0-mingw-x86_64-1.16.2.msi (ENTER)
-<code>$ gstreamer-1.0-devel-mingw-x86_64-1.16.2.msi /quiet (ENTER)
-<code>$ gstreamer-1.0-mingw-x86_64-1.16.2.msi /quiet  (ENTER)
+<code>$ cd %USERPROFILE%\Downloads</code><kbd>ENTER</kbd>  
+<code>$ wget https://gstreamer.freedesktop.org/data/pkg/windows/1.16.2/gstreamer-1.0-devel-mingw-x86_64-1.16.2.msi</code><kbd>ENTER</kbd>  
+<code>$ wget https://gstreamer.freedesktop.org/data/pkg/windows/1.16.2/gstreamer-1.0-mingw-x86_64-1.16.2.msi</code><kbd>ENTER</kbd>  
+<code>$ gstreamer-1.0-devel-mingw-x86_64-1.16.2.msi /quiet</code><kbd>ENTER</kbd>  
+<code>$ gstreamer-1.0-mingw-x86_64-1.16.2.msi /quiet</code><kbd>ENTER</kbd>  
 3. Optional - install dependency checker software  
-<code>$ wget https://github.com/lucasg/Dependencies/releases/download/v1.10/Dependencies_x64_Release.zip (ENTER)
-<code>$ unzip Dependencies_x64_Release.zip -d dependencies (ENTER)
+<code>$ wget https://github.com/lucasg/Dependencies/releases/download/v1.10/Dependencies_x64_Release.zip</code><kbd>ENTER</kbd>  
+<code>$ unzip Dependencies_x64_Release.zip -d dependencies</code><kbd>ENTER</kbd>  
 
 4. Confirm we have gstreamer and it is the mingw build  
 <code>$ rem confirm we have gstreamer and it is the mingw build</code><kbd>ENTER</kbd>  

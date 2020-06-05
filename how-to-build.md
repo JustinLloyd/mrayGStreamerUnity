@@ -7,20 +7,25 @@ Install Chocolatey (chocolatey.org) to make software installation easier
 After installing chocolatey:
 
 ## Install utilities from chocolatey ##
-1. Open an admin prompt
+1. Open an admin prompt  
+<kbd>WIN</kbd>+<kbd>R</kbd><code>cmd</code><kbd>CTRL</kbd>+<kbd>SHIFT</kbd>+<kbd>ENTER</kbd>
 
-        (WIN+R) cmd (CTRL+SHIFT+ENTER)
 
-2. Install utilities from chocolatey.org
-
-        $ choco install visualstudio2019professional (ENTER)
-        $ choco install git (ENTER)
-        $ choco install wget (ENTER)
-        $ choco install unzip (ENTER)
+2. Install utilities from chocolatey.org  
+<code>$ choco install visualstudio2019professional</code><kbd>ENTER</kbd>  
+<code>$ choco install git</code><kbd>ENTER</kbd>  
+    
+        $ choco install wget
+    <kbd>ENTER</kbd>
+    
+        $ choco install unzip
+    <kbd>ENTER</kbd>
 
 3. Close the admin prompt
 
         $ exit (ENTER)
+<kbd>ENTER</kbd>
+
 
 ## Install gstreamer & dependencies walker ##
 1. Open an admin prompt

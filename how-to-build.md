@@ -14,17 +14,10 @@ After installing chocolatey:
 2. Install utilities from chocolatey.org  
 <code>$ choco install visualstudio2019professional</code><kbd>ENTER</kbd>  
 <code>$ choco install git</code><kbd>ENTER</kbd>  
-    
-        $ choco install wget
-    <kbd>ENTER</kbd>
-    
-        $ choco install unzip
-    <kbd>ENTER</kbd>
-
-3. Close the admin prompt
-
-        $ exit (ENTER)
-<kbd>ENTER</kbd>
+<code>$ choco install wget</code><kbd>ENTER</kbd>  
+<code>$ choco install unzip</code><kbd>ENTER</kbd>  
+3. Close the admin prompt  
+<code>$ exit</code><kbd>ENTER</kbd>  
 
 
 ## Install gstreamer & dependencies walker ##

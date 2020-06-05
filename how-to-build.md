@@ -61,24 +61,26 @@ After installing chocolatey:
 1. Open a Visual Studio Command Prompt
 
         (WIN+R) %comspec% /k "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\Common7\Tools\VsDevCmd.bat" (ENTER)
+        
 2. Verify the gstreamer environment variables are correctly set
 
         $ echo %GST_SDK_PATH% (ENTER)
         $ rem we should see the following text in the command prompt
         $ rem C:\gstreamer\1.0\x86_64
+        
 3. Clone the mrayStreamUnity git repo from github
 
-        $ cd \Users\Justin\Documents (ENTER)
+        $ cd %USERPROFILE%\Documents (ENTER)
         $ git clone https://github.com/mrayy/mrayGStreamerUnity.git (ENTER)
         $ cd \Users\justin\Documents\mrayGStreamerUnity\Plugin\VS (ENTER)
 4. Build the project
 
         $ devenv GStreamerUnityPlugin.sln /build Release (ENTER)
+        
 5. Optional - confirm we have a mingw build of the mrayGstreamerUnity project by using Dependencies application    
 
         $ set PATH=%PATH%;c:\gstreamer\1.0\x86_64\bin (ENTER)
-        $ rem confirm we have a mingw build of the mray gstreamer unity library
-        $ C:\Users\justin\Documents\mrayGStreamerUnity\Plugin\VS>\users\justin\Downloads\dependencies\Dependencies.exe -modules Release64\GStreamerUnityPlugin.dll | find "gstapp" (ENTER)
+        $ %USERPROFILE%\Downloads\dependencies\Dependencies.exe -modules Release64\GStreamerUnityPlugin.dll | find "gstapp" (ENTER)
         $ rem we should see the following text in the command prompt
         $ rem [Environment] libgstapp-1.0-0.dll : c:\gstreamer\1.0\x86_64\bin\libgstapp-1.0-0.dll
 

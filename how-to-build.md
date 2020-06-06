@@ -40,7 +40,7 @@ After installing chocolatey:
 <code>$ setx GST_PLUGIN_PATH c:\gstreamer\1.0\x86_64\lib\gstreamer-1.0</code><kbd>ENTER</kbd>  
 <code>$ setx GSTREAMER_1_0_ROOT_X86_64 c:\gstreamer\1.0\x86_64</code><kbd>ENTER</kbd>  
 6. Install additional packages for Visual Studio 2019  
-<code>$ c:\Users\justin\AppData\Local\Temp\chocolatey\visualstudio2019professional\16.6.0.0\vs_Professional.exe --add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Component.Windows10SDK.17763 --includeoptional --includerecommended --quiet</code><kbd>ENTER</kbd>  
+<code>$ %USERPROFILE%\AppData\Local\Temp\chocolatey\visualstudio2019professional\16.6.0.0\vs_Professional.exe --add Microsoft.VisualStudio.Workload.ManagedDesktop --add Microsoft.VisualStudio.Workload.NativeDesktop --add Microsoft.VisualStudio.Component.Windows10SDK.17763 --includeoptional --includerecommended --quiet</code><kbd>ENTER</kbd>  
 7. Close the admin prompt  
 <code>$ exit</code><kbd>ENTER</kbd>  
 
@@ -54,7 +54,7 @@ After installing chocolatey:
 3. Clone the mrayStreamUnity git repo from github  
 <code>$ cd %USERPROFILE%\Documents</code><kbd>ENTER</kbd>  
 <code>$ git clone https://github.com/mrayy/mrayGStreamerUnity.git</code><kbd>ENTER</kbd>  
-<code>$ cd \Users\justin\Documents\mrayGStreamerUnity\Plugin\VS</code><kbd>ENTER</kbd>  
+<code>$ cd %USERPROFILE%\Documents\mrayGStreamerUnity\Plugin\VS</code><kbd>ENTER</kbd>  
 4. Build the project  
 <code>$ devenv GStreamerUnityPlugin.sln /build Release</code><kbd>ENTER</kbd>  
 5. Optional - confirm we have a mingw build of the mrayGstreamerUnity project by using Dependencies application  

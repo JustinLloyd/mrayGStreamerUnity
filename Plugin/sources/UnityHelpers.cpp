@@ -7,6 +7,9 @@
 #include <windows.h>
 #endif
 //#include <gl/gl.h>
+#include <glib.h>
+#include <chrono>
+#include <ctime>
 
 
 
@@ -35,11 +38,18 @@ void LogMessage(const std::string& msg, ELogLevel level)
 		m = "Error: ";
 
 	m += msg;
+
+
+#if UNITY_LINUX
+	m += '\n';
+#endif
+
 #if UNITY_WIN
 	OutputDebugStringA(m.c_str());
 #else
 	printf("%s", m.c_str());
 #endif
+
 	LogManager::Instance()->LogMessage(m);
 // 	if (Debug)
 // 		Debug(m.c_str());
@@ -73,23 +83,54 @@ LogManager* LogManager::Instance()
 
 LogManager::LogManager()
 {
-	fileName = "GStreamerLog.txt";
-	m_logFile = fopen("GStreamerLog.txt", "w");
-	fclose(m_logFile);
-	m_logFile = 0;
+    logFilePath = DetermineLogFilePath("GStreamerLog.txt");
+
+	// empty log
+	m_logFile = fopen(logFilePath.c_str(), "w");
+	if (m_logFile)
+	{
+		fclose(m_logFile);
+		m_logFile = 0;
+	}
 }
 LogManager::~LogManager()
 {
-	fclose(m_logFile);
+	if (m_logFile)
+	{
+		fclose(m_logFile);
+		m_logFile = 0;
+	}
 }
 void LogManager::LogMessage(const std::string& msg)
 {
-	m_logFile = fopen("GStreamerLog.txt", "a");
-	fprintf(m_logFile, "%s\n", msg.c_str());
-	fclose(m_logFile);
-	m_logFile = 0;
+    auto end = std::chrono::system_clock::now();
+    std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+    std::string end_ctime(std::ctime(&end_time));
+    {
+        const std::lock_guard<std::mutex> lock(m_mutex);
+        m_logFile = fopen(logFilePath.c_str(), "a");
+        fprintf(m_logFile, "[%s] %s\n", end_ctime.substr(end_ctime.find(':') - 2, 8).c_str(), msg.c_str());
+        if (m_logFile)
+        {
+            fclose(m_logFile);
+            m_logFile = 0;
+        }
+    }
 }
 
+std::string LogManager::DetermineLogFilePath(const std::string& fileName)
+{
+    std::string logFilePathDirectory = "";
+    const gchar* environmentLogFilePath = g_getenv("GSTREAMER_UNITY_LOG_FILE_PATH");
+
+    if (environmentLogFilePath != NULL)
+    {
+        logFilePathDirectory = environmentLogFilePath;
+        logFilePathDirectory += "\\";
+    }
+
+    return logFilePathDirectory + fileName;
+}
 
 
 void CopyToTexture(const ImageInfo* src, uchar* dst,video::EPixelFormat fmt)

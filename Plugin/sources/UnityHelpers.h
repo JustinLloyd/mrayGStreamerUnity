@@ -6,12 +6,18 @@
 #include <stdio.h>
 #include <string>
 #include <sstream>
+#include <mutex>
 #include "mTypes.h"
 #include "Unity/IUnityInterface.h"
 
 #ifdef __ANDROID__
 #define __stdcall
 #endif
+
+#ifdef __linux__
+#define __stdcall
+#endif
+
 namespace mray
 {
 	namespace video
@@ -40,8 +46,12 @@ typedef float(*FuncFloatRetPtr)();
 extern "C" class UNITY_INTERFACE_EXPORT LogManager
 {
 	static LogManager* s_instance;;
+	std::mutex m_mutex;
 	FILE* m_logFile;
-	std::string fileName;
+	std::string logFilePath;
+
+	std::string DetermineLogFilePath(const std::string& fileName);
+
 public:
 	LogManager();
 	~LogManager();
